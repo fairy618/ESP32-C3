@@ -1,0 +1,75 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0xb (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd0108,len:0x1880
+load:0x403b6000,len:0xe60
+load:0x403ba000,len:0x34f0
+entry 0x403b6284
+I (25) boot: ESP-IDF v4.4.1 2nd stage bootloader
+I (25) boot: compile time 20:54:52
+I (26) boot: chip revision: 0
+I (27) qio_mode: Enabling default flash chip QIO
+I (32) boot.esp32s3: Boot SPI Speed : 80MHz
+I (37) boot.esp32s3: SPI Mode       : QIO
+I (42) boot.esp32s3: SPI Flash Size : 8MB
+I (47) boot: Enabling RNG early entropy source...
+I (52) boot: Partition Table:
+I (56) boot: ## Label            Usage          Type ST Offset   Length
+I (63) boot:  0 phy_init         RF data          01 01 00009000 00001000
+I (70) boot:  1 factory          factory app      00 00 00010000 001f4000
+I (78) boot:  2 nvs              WiFi data        01 02 00204000 00004000
+I (85) boot: End of partition table
+I (90) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0b82ch ( 47148) map
+I (105) esp_image: segment 1: paddr=0001b854 vaddr=3fc922e0 size=02830h ( 10288) load
+I (108) esp_image: segment 2: paddr=0001e08c vaddr=40374000 size=01f8ch (  8076) load
+I (116) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=26430h (156720) map
+I (147) esp_image: segment 4: paddr=00046458 vaddr=40375f8c size=0c354h ( 50004) load
+I (157) esp_image: segment 5: paddr=000527b4 vaddr=50000000 size=00010h (    16) load
+I (162) boot: Loaded app from partition at offset 0x10000
+I (162) boot: Disabling RNG early entropy source...
+I (177) cpu_start: Pro cpu up.
+I (177) cpu_start: Starting app cpu, entry point is 0x403751bc
+0x403751bc: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v4.4.1/components/esp_system/port/cpu_start.c:160
+
+I (0) cpu_start: App cpu up.
+I (191) cpu_start: Pro cpu start user code
+I (191) cpu_start: cpu freq: 240000000
+I (191) cpu_start: Application information:
+I (194) cpu_start: Project name:     sd_card
+I (199) cpu_start: App version:      1
+I (203) cpu_start: Compile time:     Jul 31 2022 20:54:26
+I (209) cpu_start: ELF file SHA256:  5530918a3489c95e...
+I (215) cpu_start: ESP-IDF:          v4.4.1
+I (220) heap_init: Initializing. RAM available for dynamic allocation:
+I (227) heap_init: At 3FC95578 len 0004AA88 (298 KiB): D/IRAM
+I (234) heap_init: At 3FCE0000 len 0000EE34 (59 KiB): STACK/DRAM
+I (240) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM
+I (247) heap_init: At 600FE000 len 00002000 (8 KiB): RTCRAM
+I (253) spi_flash: detected chip: generic
+I (258) spi_flash: flash io: qio
+I (262) sleep: Configure to isolate all GPIO pins in sleep state
+I (268) sleep: Enable automatic switching of GPIO sleep configuration
+I (276) cpu_start: Starting scheduler on PRO CPU.
+I (0) cpu_start: Starting scheduler on APP CPU.
+I (291) example: Initializing SD card
+I (295) example: Using SPI peripheral
+I (300) example: Mounting filesystem
+I (304) gpio: GPIO[12]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0
+I (355) sdspi_transaction: cmd=5, R1 response: command not supported
+I (775) example: Filesystem mounted
+Name: SD
+Type: SDSC
+Speed: 20 MHz
+Size: 1876MB
+I (776) example: Opening file /sdcard/hello.txt
+I (795) example: File written
+I (807) example: Renaming file /sdcard/hello.txt to /sdcard/foo.txt
+I (810) example: Reading file /sdcard/foo.txt
+I (811) example: Read from file: 'Hello SD!'
+I (813) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0
+I (822) example: Card unmounted
+I (826) gpio: GPIO[11]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0
+I (835) gpio: GPIO[9]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0
+I (844) gpio: GPIO[10]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0
