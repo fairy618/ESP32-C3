@@ -1,4 +1,4 @@
-/*
+﻿/*
  * @Author: Fairy 2754283833@qq.com
  * @Date: 2022-08-03 18:43:28
  * @LastEditTime: 2022-08-06 16:02:01
@@ -60,11 +60,28 @@ static void IRAM_ATTR gpio_isr_handler(void *arg)
 static void gpio_task_example(void *arg)
 {
     uint32_t io_num;
+    int io_status;
     for (;;)
     {
         if (xQueueReceive(gpio_evt_queue, &io_num, portMAX_DELAY))
         {
-            printf("GPIO[%d] intr, val: %d\n", io_num, gpio_get_level(io_num));
+            io_status = gpio_get_level(io_num);
+            if (io_num == KEY1)
+            {
+                printf("KEY1 is %s.\n", ((io_status == 1) ? "loosen" : "press"));
+            }
+            else if (io_num == KEY2)
+            {
+                printf("KEY2 is %s.\n", ((io_status == 1) ? "loosen" : "press"));
+            }
+            else if (io_num == KEY3)
+            {
+                printf("KEY3 is %s.\n", ((io_status == 1) ? "loosen" : "press"));
+            }
+            else
+            {
+                printf("GPIO[%d] intr, val: %d\n", io_num, gpio_get_level(io_num));
+            }
         }
     }
 }
